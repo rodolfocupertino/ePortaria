@@ -1,0 +1,10 @@
+.modal.modal-wide .modal-dialog {
+  width: 90%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+body.modal-wide .datepicker {
+    z-index: 1200 !important;
+}

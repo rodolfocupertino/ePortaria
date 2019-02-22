@@ -1,0 +1,41 @@
+<IfModule mod_rewrite.c>
+
+Options +FollowSymLinks
+#-MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^login/([a-z0-9-]+)/?$ login.php?action=$1 [NC]
+#RewriteRule ^login/([a-z0-9-]+)/([0-9]+)/?$ login.php?client_id=$2&action=$1 [NC]
+RewriteRule ^logout/$ logout.php
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^home/?$ index.php?action=$1 [NC]
+RewriteRule ^dashboard/?$ index.php?action=$1 [NC]
+
+RewriteRule ^visitante/([a-z0-9-]+)/?$ visitante.php?action=$1 [NC]
+RewriteRule ^visitante/([a-z0-9-]+)/([0-9]+)/?$ visitante.php?id=$2&action=$1 [NC]
+
+RewriteRule ^visita/([a-z0-9-]+)/?$ visita.php?action=$1 [NC]
+RewriteRule ^visita/([a-z0-9-]+)/([0-9]+)/?$ visita.php?id=$2&action=$1 [NC]
+
+
+RewriteRule ^user/([a-z0-9-]+)/?$ user.php?action=$1 [NC]
+RewriteRule ^user/([a-z0-9-]+)/([0-9]+)/?$ user.php?id=$2&action=$1 [NC]
+
+#RewriteRule ^service-modal/([a-z0-9-]+)/?$ service-modal.php?action=$1 [NC]
+#RewriteRule ^user/([a-z0-9-]+)/([0-9]+)/?$ user.php?id=$2&action=$1 [NC]
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+
+ErrorDocument 404 /404.php
+#ErrorDocument 500 500.php
+</IfModule>

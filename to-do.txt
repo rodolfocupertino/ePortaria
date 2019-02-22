@@ -1,0 +1,16 @@
+To-do List
+
+Segurança:
+- Implementar os nivel de usuário(roles)
+- 
+
+Relátórios
+- Relatório por visitante
+- 
+
+Home
+- Mostrar visitantes do dis
+- Visitantes no Colégio
+- Visitantes que sairam do colégio
+
+
